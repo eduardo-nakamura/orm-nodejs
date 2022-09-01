@@ -3,7 +3,16 @@ module.exports = (sequelize, DataTypes) => {
   const Pessoas = sequelize.define('Pessoas', {
     nome: DataTypes.STRING,
     ativo: DataTypes.BOOLEAN,
-    email: DataTypes.STRING,
+    email: {
+      type: DataTypes.STRING,
+      //validação de e-mail
+      validate: { 
+        isEmail: {
+          args: true,
+          msg: 'email inválido'
+        }
+      }
+    }, 
     role: DataTypes.STRING
   }, { 
     paranoid: true, // soft delete
