@@ -2,10 +2,10 @@
 cd\Program Files\MySQL\MySQL Server 8.0\bin
 
 connect mysql
-.\mysql -u root -p
+.\mysql -u root -p 140731
 
 show databases;
-
+SHOW TABLES;
 create database name_database;
 
 use name_database;
@@ -31,4 +31,4 @@ generate seed File
 npx sequelize-cli seed:generate --name name_file
 
 seed
-npx sequelize-cli de:seed:undo:all
+npx sequelize-cli de:seed:all
