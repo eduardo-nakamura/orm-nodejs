@@ -1,7 +1,16 @@
 'use strict'
 module.exports = (sequelize, DataTypes) => {
   const Pessoas = sequelize.define('Pessoas', {
-    nome: DataTypes.STRING,
+    nome: { 
+      type: DataTypes.STRING,
+      unique: true,
+      // validação por função
+      validate: {
+        funcaoValidar: function(dados) {
+          if(dados.length < 3) throw new Error(`Nome deve ter mais de 3 caracteres`)
+        }
+      }
+    },
     ativo: DataTypes.BOOLEAN,
     email: {
       type: DataTypes.STRING,
