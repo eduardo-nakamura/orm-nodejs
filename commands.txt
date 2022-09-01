@@ -16,7 +16,19 @@ select * name_table;
 
 insert into name_table (field1, field2, field3, createdAt, updatedAt) values ("value1", 1, true, NOW(), NOw())
 
+FROM: pega as tabelas onde estão os dados
 
+WHERE: filtra os dados
+
+GROUP BY: agrega os dados
+
+HAVING: filtra os dados agregados
+
+SELECT: retorna os resultados
+
+ORDER BY: ordena os resultados
+
+LIMIT: limita a quantidade de resultados
 
 
 ----Terminal----

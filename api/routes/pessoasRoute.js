@@ -9,6 +9,8 @@ router
   .get('/pessoas/:id', PessoaController.pegaUmaPessoa)
   .get('/pessoas/:estudanteId/matricula/:matriculaId',  PessoaController.pegaUmaMatricula)
   .get('/pessoas/:estudanteId/matricula',  PessoaController.pegaMatriculasEstudante)
+  .get('/pessoas/matricula/:matriculaId/confirmadas',  PessoaController.pegaMatriculasTurma)
+  .get('/pessoas/matricula/lotada',  PessoaController.pegaTurmaLotada)
   
   .post('/pessoas', PessoaController.criaPessoa)
   .post('/pessoas/:id/restaura', PessoaController.restauraPessoa)
