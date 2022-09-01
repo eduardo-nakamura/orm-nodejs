@@ -5,7 +5,15 @@ module.exports = (sequelize, DataTypes) => {
     ativo: DataTypes.BOOLEAN,
     email: DataTypes.STRING,
     role: DataTypes.STRING
-  }, { paranoid: true })
+  }, { 
+    paranoid: true, // soft delete
+    defaultScope: {
+      where: { ativo: true } // filtra por pessoas onde ativo é true
+    },
+    scopes: {
+      todos: { where: {}} // scope param
+    }
+   })
   Pessoas.associate = function(models) {
     Pessoas.hasMany(models.Turmas, {
       foreignKey: 'docente_id'
